@@ -5,7 +5,7 @@ function maxOfTwoNumbers(num1,num2) {
   }
   else {
   return num2; 
-}
+  }
 }
 
 
@@ -14,7 +14,11 @@ function maxOfTwoNumbers(num1,num2) {
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
 function findLongestWord(words) {
-  let word = ""
+  if(words.length === 0) {
+    return null
+  }
+  let word = " ";
+
   for ( let i = 0; i < words.length; i++) {
     if (word.length < words[i].length) {
       word = words[i]
@@ -52,12 +56,19 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers(numbersAvg) {
+function averageNumbers(numbers) {
   
-  let sum = sumNumbers(numbers);
-  const average = sum / numbers.length;
+  if (numbers.length === 0) {
+    return = null;
+  }
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+  let average = (sum/numbers.length);
   return average;
-}
+
+} 
 
   
 
@@ -145,8 +156,7 @@ function greatestProduct() {}
 
 
 
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
+
 if (typeof module !== 'undefined') {
   module.exports = {
     maxOfTwoNumbers,
